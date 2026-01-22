@@ -4,7 +4,7 @@
   "description": "Copy-paste UI components for tblx data tables",
   "type": "module",
   "bin": {
-    "tblx-ui": "./dist/cli/index.js"
+    "tblx-ui": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",

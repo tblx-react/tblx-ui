@@ -8,8 +8,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Path to registry (relative to dist/cli when built)
-const REGISTRY_PATH = join(__dirname, "../../registry");
+// Path to registry (relative to dist when built)
+const REGISTRY_PATH = join(__dirname, "../registry");
 
 interface ComponentConfig {
   name: string;
@@ -27,7 +27,7 @@ interface Registry {
 }
 
 function loadRegistry(): Registry {
-  const registryPath = join(REGISTRY_PATH, "../registry.json");
+  const registryPath = join(__dirname, "../registry.json");
   const content = readFileSync(registryPath, "utf-8");
   return JSON.parse(content);
 }
