@@ -56,16 +56,11 @@ export function TblxLoadingOverlay({ className = "" }: TblxLoadingOverlayProps) 
   }
 
   return (
-    <>
-      <div className={`tblx__loading-overlay ${className}`} aria-hidden="true" />
-      <div className="tblx__loading-overlay-spinner">
-        <div
-          className="tblx__overlay-spinner"
-          role="status"
-          aria-label="Loading"
-        />
-      </div>
-    </>
+    <div
+      className={`tblx__loading-overlay ${className}`}
+      role="status"
+      aria-label="Loading"
+    />
   );
 }
 
