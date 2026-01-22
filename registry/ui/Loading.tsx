@@ -56,9 +56,18 @@ export function TblxLoadingOverlay({ className = "" }: TblxLoadingOverlayProps) 
   }
 
   return (
-    <div className={`tblx__loading-overlay ${className}`}>
-      <div className="tblx__overlay-spinner" />
-    </div>
+    <>
+      {/* Background overlay */}
+      <div className={`tblx__loading-overlay ${className}`} aria-hidden="true" />
+      {/* Sticky spinner container - in document flow for sticky to work */}
+      <div className="tblx__loading-overlay-sticky">
+        <div
+          className="tblx__overlay-spinner"
+          role="status"
+          aria-label="Loading"
+        />
+      </div>
+    </>
   );
 }
 

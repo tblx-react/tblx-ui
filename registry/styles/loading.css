@@ -48,17 +48,27 @@
    (shown over table when reloading with existing data)
    ============================================ */
 
+/* Background overlay - covers the table */
 .tblx__loading-overlay {
   position: absolute;
   inset: 0;
   z-index: 10;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   background: rgba(15, 15, 15, 0.7);
   backdrop-filter: blur(2px);
   border-radius: var(--tf-radius-lg);
   animation: table-flow-overlay-fade-in 200ms ease-out;
+  pointer-events: none;
+}
+
+/* Sticky spinner container - in document flow so sticky works */
+.tblx__loading-overlay-sticky {
+  position: sticky;
+  top: 50%;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  height: 0;
+  pointer-events: none;
 }
 
 @keyframes table-flow-overlay-fade-in {
@@ -71,11 +81,9 @@
 }
 
 .tblx__overlay-spinner {
-  position: sticky;
-  top: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  margin-top: 2rem;
+  margin-top: -1.25rem; /* Center vertically (half of height) */
   border: 3px solid var(--tf-border);
   border-top-color: var(--tf-primary);
   border-radius: 50%;
