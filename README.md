@@ -2,26 +2,12 @@
 
 Copy-paste UI components for tblx data tables. Inspired by [shadcn/ui](https://ui.shadcn.com/).
 
-## Installation
-
-```bash
-# Use with npx (recommended - no installation required)
-npx tblx-ui add tblx
-
-# Or install as a dev dependency
-npm install -D tblx-ui
-```
-
-> **Note:** `tblx-ui` is a CLI tool that copies components into your project. It's not needed at runtime, so if you install it, use `-D` (dev dependency).
-
 ## Requirements
 
 - **React 18+**
-- **tblx** npm package (`npm install tblx`)
+- **tblx** core library (`npm install tblx`)
 
 ## Usage
-
-### Add Components
 
 ```bash
 # Add the main Tblx component with all sub-components
@@ -35,6 +21,8 @@ npx tblx-ui add search
 # List all available components
 npx tblx-ui list
 ```
+
+Components are copied directly into your project — no additional dependencies required.
 
 ### Use in Your App
 
