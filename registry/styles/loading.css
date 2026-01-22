@@ -60,14 +60,13 @@
   pointer-events: none;
 }
 
-/* Sticky spinner container - in document flow so sticky works */
-.tblx__loading-overlay-sticky {
-  position: sticky;
+/* Fixed spinner - always visible in viewport center */
+.tblx__loading-overlay-spinner {
+  position: fixed;
   top: 50%;
-  z-index: 11;
-  display: flex;
-  justify-content: center;
-  height: 0;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
@@ -83,7 +82,6 @@
 .tblx__overlay-spinner {
   width: 2.5rem;
   height: 2.5rem;
-  margin-top: -1.25rem; /* Center vertically (half of height) */
   border: 3px solid var(--tf-border);
   border-top-color: var(--tf-primary);
   border-radius: 50%;
