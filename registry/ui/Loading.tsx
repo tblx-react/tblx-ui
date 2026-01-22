@@ -25,11 +25,9 @@ export function TblxLoading({ children, className = "" }: TblxLoadingProps) {
   }
 
   return (
-    <div className={`tblx__loading ${className}`}>
+    <div className={`tblx__loading ${className}`} role="status" aria-label="Loading">
       {children || (
-        <div className="tblx__loading-spinner">
-          <span>Loading...</span>
-        </div>
+        <div className="tblx__loading-spinner" aria-hidden="true" />
       )}
     </div>
   );
