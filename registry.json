@@ -1,0 +1,99 @@
+{
+  "name": "tblx-ui",
+  "version": "0.1.0",
+  "components": {
+    "tblx": {
+      "name": "tblx",
+      "description": "Main Tblx component with all compound components attached",
+      "files": ["registry/ui/Tblx.tsx"],
+      "dependencies": ["search", "table", "pager", "filters", "filter-toggler", "sort-by", "bulk-actions", "column-config", "loading", "empty", "total-count", "infinite-scroll", "select-filter", "multiselect-filter"],
+      "styles": ["registry/styles/index.css"]
+    },
+    "search": {
+      "name": "search",
+      "description": "Search input component with debouncing",
+      "files": ["registry/ui/Search.tsx"],
+      "styles": ["registry/styles/SearchInput.css"]
+    },
+    "table": {
+      "name": "table",
+      "description": "Data table component with sorting and selection",
+      "files": ["registry/ui/Table.tsx"],
+      "styles": ["registry/styles/Table.css"]
+    },
+    "pager": {
+      "name": "pager",
+      "description": "Pagination controls component",
+      "files": ["registry/ui/Pager.tsx"],
+      "styles": ["registry/styles/Pager.css"]
+    },
+    "filters": {
+      "name": "filters",
+      "description": "Filter container component",
+      "files": ["registry/ui/Filters.tsx"],
+      "styles": ["registry/styles/filters.css"]
+    },
+    "filter-toggler": {
+      "name": "filter-toggler",
+      "description": "Toggle button for filter visibility",
+      "files": ["registry/ui/FilterToggler.tsx"],
+      "styles": ["registry/styles/FiltersVisibilityToggler.css"]
+    },
+    "sort-by": {
+      "name": "sort-by",
+      "description": "Sort dropdown component",
+      "files": ["registry/ui/SortBy.tsx"],
+      "styles": ["registry/styles/SelectInput.css"]
+    },
+    "bulk-actions": {
+      "name": "bulk-actions",
+      "description": "Bulk action buttons for selected rows",
+      "files": ["registry/ui/BulkActions.tsx"],
+      "styles": ["registry/styles/BulkActions.css"]
+    },
+    "column-config": {
+      "name": "column-config",
+      "description": "Column visibility and reorder panel",
+      "files": ["registry/ui/ColumnConfig.tsx"],
+      "styles": ["registry/styles/ColumnConfig.css"]
+    },
+    "loading": {
+      "name": "loading",
+      "description": "Loading state and overlay components",
+      "files": ["registry/ui/Loading.tsx"],
+      "styles": ["registry/styles/loading.css"]
+    },
+    "empty": {
+      "name": "empty",
+      "description": "Empty state component",
+      "files": ["registry/ui/Empty.tsx"]
+    },
+    "total-count": {
+      "name": "total-count",
+      "description": "Total count display component",
+      "files": ["registry/ui/TotalCount.tsx"]
+    },
+    "infinite-scroll": {
+      "name": "infinite-scroll",
+      "description": "Infinite scroll sentinel component",
+      "files": ["registry/ui/InfiniteScroll.tsx"],
+      "styles": ["registry/styles/LoadOnScroll.css"]
+    },
+    "select-filter": {
+      "name": "select-filter",
+      "description": "Single-select filter dropdown",
+      "files": ["registry/ui/inputs/SelectFilter.tsx"],
+      "styles": ["registry/styles/SelectInput.css"]
+    },
+    "multiselect-filter": {
+      "name": "multiselect-filter",
+      "description": "Multi-select filter dropdown",
+      "files": ["registry/ui/inputs/MultiselectFilter.tsx"],
+      "styles": ["registry/styles/SelectInput.css"]
+    }
+  },
+  "baseStyles": [
+    "registry/styles/variables.css",
+    "registry/styles/layout.css"
+  ]
+}

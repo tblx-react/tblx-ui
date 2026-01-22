@@ -1,0 +1,100 @@
+/* ============================================
+   Pager
+   ============================================ */
+
+.tblx__pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--tf-bg-elevated);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-lg);
+}
+
+.tblx__pager-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-sm);
+  background: var(--tf-bg);
+  color: var(--tf-text-secondary);
+  cursor: pointer;
+  transition: all var(--tf-transition);
+}
+
+.tblx__pager-arrow:hover:not(:disabled) {
+  border-color: var(--tf-border-hover);
+  background: var(--tf-bg-hover);
+  color: var(--tf-text);
+}
+
+.tblx__pager-arrow:focus {
+  outline: none;
+  border-color: var(--tf-border-focus);
+  box-shadow: 0 0 0 2px var(--tf-primary-ring);
+}
+
+.tblx__pager-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tblx__pager-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0.5rem;
+}
+
+.tblx__pager-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--tf-radius-sm);
+  background: transparent;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--tf-text-secondary);
+  cursor: pointer;
+  transition: all var(--tf-transition);
+}
+
+.tblx__pager-page:hover:not(.tblx__pager-page--active) {
+  background: var(--tf-bg-hover);
+  color: var(--tf-text);
+}
+
+.tblx__pager-page:focus {
+  outline: none;
+  border-color: var(--tf-border-focus);
+  box-shadow: 0 0 0 2px var(--tf-primary-ring);
+}
+
+.tblx__pager-page--active {
+  background: var(--tf-primary);
+  color: var(--tf-bg);
+  font-weight: 600;
+  cursor: default;
+}
+
+.tblx__pager-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 2rem;
+  font-size: 0.875rem;
+  color: var(--tf-text-muted);
+  user-select: none;
+}

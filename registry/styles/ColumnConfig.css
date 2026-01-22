@@ -1,0 +1,165 @@
+/* ============================================
+   Column Configuration Panel
+   ============================================ */
+
+.tblx__column-config {
+  position: relative;
+  display: inline-flex;
+}
+
+.tblx__column-config-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--tf-bg-elevated);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius);
+  color: var(--tf-text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--tf-transition);
+  white-space: nowrap;
+}
+
+.tblx__column-config-trigger:hover {
+  background: var(--tf-bg-hover);
+  border-color: var(--tf-border-hover);
+}
+
+.tblx__column-config-trigger:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tf-primary-ring);
+}
+
+.tblx__column-config-icon {
+  flex-shrink: 0;
+  color: var(--tf-text-secondary);
+}
+
+.tblx__column-config-count {
+  color: var(--tf-text-secondary);
+  font-size: 0.75rem;
+}
+
+/* Dropdown */
+.tblx__column-config-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  min-width: 220px;
+  margin-top: 0.25rem;
+  background: var(--tf-bg-elevated);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.tblx__column-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--tf-border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--tf-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tblx__column-config-reset {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius);
+  color: var(--tf-text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--tf-transition);
+}
+
+.tblx__column-config-reset:hover {
+  background: var(--tf-bg-hover);
+  color: var(--tf-text);
+  border-color: var(--tf-border-hover);
+}
+
+/* List */
+.tblx__column-config-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.tblx__column-config-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: default;
+  transition: background var(--tf-transition);
+}
+
+.tblx__column-config-item:hover {
+  background: var(--tf-bg-hover);
+}
+
+.tblx__column-config-item--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.tblx__column-config-item--clickable:focus {
+  outline: none;
+  background: var(--tf-bg-hover);
+}
+
+.tblx__column-config-item--clickable:focus-visible {
+  outline: 2px solid var(--tf-primary);
+  outline-offset: -2px;
+}
+
+.tblx__column-config-item--dragging {
+  opacity: 0.5;
+  background: var(--tf-bg-hover);
+}
+
+.tblx__column-config-item--drag-over {
+  background: var(--tf-primary-light);
+  box-shadow: inset 0 2px 0 var(--tf-primary);
+}
+
+.tblx__column-config-drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  color: var(--tf-text-secondary);
+  cursor: grab;
+  opacity: 0.6;
+  transition: opacity var(--tf-transition);
+}
+
+.tblx__column-config-drag-handle:hover {
+  opacity: 1;
+}
+
+.tblx__column-config-item--dragging .tblx__column-config-drag-handle {
+  cursor: grabbing;
+}
+
+.tblx__column-config-label {
+  flex: 1;
+  font-size: 0.8125rem;
+  color: var(--tf-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

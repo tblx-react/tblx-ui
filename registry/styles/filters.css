@@ -1,0 +1,39 @@
+/* ============================================
+   Filters Section
+   ============================================ */
+
+.tblx__filters {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.875rem 1rem;
+  background: var(--tf-bg-elevated);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-lg);
+}
+
+.tblx__filters-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--tf-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media (max-width: 640px) {
+  .tblx__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tblx__filters-label {
+    margin-bottom: 0.25rem;
+  }
+}

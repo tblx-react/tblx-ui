@@ -1,0 +1,43 @@
+/* ============================================
+   Filters Visibility Toggler
+   ============================================ */
+
+.tblx__filter-toggler {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-md);
+  background: var(--tf-bg);
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--tf-text-secondary);
+  transition: all var(--tf-transition);
+}
+
+.tblx__filter-toggler:hover {
+  border-color: var(--tf-border-hover);
+  background: var(--tf-bg-hover);
+  color: var(--tf-text);
+}
+
+.tblx__filter-toggler:focus {
+  outline: none;
+  border-color: var(--tf-border-focus);
+  box-shadow: 0 0 0 2px var(--tf-primary-ring);
+}
+
+.tblx__filter-toggler--active {
+  border-color: var(--tf-primary);
+  background: var(--tf-primary-light);
+  color: var(--tf-primary);
+}
+
+.tblx__filter-toggler svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
