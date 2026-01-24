@@ -266,6 +266,47 @@
 }
 
 /* ============================================
+   Skeleton Loading
+   ============================================ */
+
+.tblx__row--skeleton td {
+  pointer-events: none;
+}
+
+.tblx__skeleton {
+  height: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--tf-border) 0%,
+    var(--tf-bg-hover) 50%,
+    var(--tf-border) 100%
+  );
+  background-size: 200% 100%;
+  animation: tblx-skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--tf-radius-sm);
+}
+
+.tblx__skeleton--checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.tblx__skeleton--action {
+  margin-left: auto;
+}
+
+@keyframes tblx-skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================
    Empty State
    ============================================ */
 

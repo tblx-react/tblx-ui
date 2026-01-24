@@ -30,5 +30,5 @@
   border: 2px solid var(--tf-border);
   border-top-color: var(--tf-primary);
   border-radius: 50%;
-  animation: table-flow-spin 0.8s linear infinite;
+  animation: tblx-spin 0.8s linear infinite;
 }

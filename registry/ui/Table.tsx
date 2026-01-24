@@ -89,7 +89,7 @@ export function TblxTable<T extends { id: string | number }>({
   className = "",
   enableSelection,
 }: TblxTableProps<T>) {
-  const { hasBulkActions } = useTblxContext<T>();
+  const { hasBulkActions, isLoading, state } = useTblxContext<T>();
   const {
     rows,
     configuredColumns,
@@ -104,6 +104,10 @@ export function TblxTable<T extends { id: string | number }>({
 
   // Auto-enable selection when BulkActions is present, or use explicit prop as override
   const showSelection = enableSelection ?? hasBulkActions;
+  
+  // Show skeleton when loading and no data
+  const showSkeleton = isLoading && rows.length === 0;
+  const skeletonRowCount = state?.limit || 20;
 
   return (
     <table className={`tblx__table ${className}`}>
@@ -120,6 +124,7 @@ export function TblxTable<T extends { id: string | number }>({
                 }}
                 onChange={(e) => handleSelectAll(e.target.checked)}
                 aria-label="Select all rows"
+                disabled={showSkeleton}
               />
             </th>
           )}
@@ -167,57 +172,88 @@ export function TblxTable<T extends { id: string | number }>({
       </thead>
 
       <tbody>
-        {rows.map((row) => {
-          const isSelected = selectedRowIds.includes(row.id);
-          return (
-            <tr
-              key={row.id}
-              className={isSelected ? "tblx__row--selected" : ""}
-            >
+        {showSkeleton ? (
+          // Skeleton loading rows
+          Array.from({ length: skeletonRowCount }).map((_, rowIndex) => (
+            <tr key={`skeleton-${rowIndex}`} className="tblx__row--skeleton">
               {showSelection && (
                 <td className="tblx__select-column">
-                  <input
-                    type="checkbox"
-                    className="tblx__checkbox"
-                    checked={isSelected}
-                    onChange={(e) => handleRowSelect(row.id, e.target.checked)}
-                    aria-label={`Select row ${row.id}`}
-                  />
+                  <div className="tblx__skeleton tblx__skeleton--checkbox" />
                 </td>
               )}
-              {configuredColumns.map((col) => {
-                if (rowRenderer) {
-                  return rowRenderer(configuredColumns, row);
-                }
-
+              {configuredColumns.map((col, colIndex) => {
                 const columnKey = String(col.key);
                 const isAction = col.type === "action";
-
-                // Custom render function - both column types use same signature
-                if (col.render) {
-                  return (
-                    <td
-                      key={columnKey}
-                      className={`${col.className || ""} ${isAction ? "tblx__td--action" : ""}`}
-                    >
-                      {col.render(row) as React.ReactNode}
-                    </td>
-                  );
-                }
-
-                // Default rendering for data columns (no render function)
-                const value = row[col.key as keyof T];
-                const content =
-                  value !== undefined && value !== null ? String(value) : "";
+                // Deterministic width variation based on row and column index
+                const widthPercent = 60 + ((rowIndex * 7 + colIndex * 13) % 35);
                 return (
-                  <td key={columnKey} className={col.className}>
-                    {content}
+                  <td
+                    key={columnKey}
+                    className={`${col.className || ""} ${isAction ? "tblx__td--action" : ""}`}
+                  >
+                    <div 
+                      className={`tblx__skeleton ${isAction ? "tblx__skeleton--action" : ""}`}
+                      style={{ width: isAction ? "60px" : `${widthPercent}%` }}
+                    />
                   </td>
                 );
               })}
             </tr>
-          );
-        })}
+          ))
+        ) : (
+          // Actual data rows
+          rows.map((row) => {
+            const isSelected = selectedRowIds.includes(row.id);
+            return (
+              <tr
+                key={row.id}
+                className={isSelected ? "tblx__row--selected" : ""}
+              >
+                {showSelection && (
+                  <td className="tblx__select-column">
+                    <input
+                      type="checkbox"
+                      className="tblx__checkbox"
+                      checked={isSelected}
+                      onChange={(e) => handleRowSelect(row.id, e.target.checked)}
+                      aria-label={`Select row ${row.id}`}
+                    />
+                  </td>
+                )}
+                {configuredColumns.map((col) => {
+                  if (rowRenderer) {
+                    return rowRenderer(configuredColumns, row);
+                  }
+
+                  const columnKey = String(col.key);
+                  const isAction = col.type === "action";
+
+                  // Custom render function - both column types use same signature
+                  if (col.render) {
+                    return (
+                      <td
+                        key={columnKey}
+                        className={`${col.className || ""} ${isAction ? "tblx__td--action" : ""}`}
+                      >
+                        {col.render(row) as React.ReactNode}
+                      </td>
+                    );
+                  }
+
+                  // Default rendering for data columns (no render function)
+                  const value = row[col.key as keyof T];
+                  const content =
+                    value !== undefined && value !== null ? String(value) : "";
+                  return (
+                    <td key={columnKey} className={col.className}>
+                      {content}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })
+        )}
       </tbody>
     </table>
   );
