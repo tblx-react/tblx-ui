@@ -74,8 +74,6 @@ function UsersTable() {
       </Tblx.Filters>
 
       <div className="tblx__content">
-        <Tblx.Loading />
-        <Tblx.LoadingOverlay />
         <Tblx.Table columns={columns} />
         <Tblx.Empty>No users found</Tblx.Empty>
       </div>

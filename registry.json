@@ -6,7 +6,7 @@
       "name": "tblx",
       "description": "Main Tblx component with all compound components attached",
       "files": ["registry/ui/Tblx.tsx"],
-      "dependencies": ["search", "table", "pager", "filters", "filter-toggler", "sort-by", "bulk-actions", "column-config", "loading", "empty", "total-count", "infinite-scroll", "select-filter", "multiselect-filter"],
+      "dependencies": ["search", "table", "pager", "filters", "filter-toggler", "sort-by", "bulk-actions", "column-config", "empty", "total-count", "infinite-scroll", "select-filter", "multiselect-filter", "cards"],
       "styles": ["registry/styles/index.css"]
     },
     "search": {
@@ -57,12 +57,6 @@
       "files": ["registry/ui/ColumnConfig.tsx"],
       "styles": ["registry/styles/ColumnConfig.css"]
     },
-    "loading": {
-      "name": "loading",
-      "description": "Loading state and overlay components",
-      "files": ["registry/ui/Loading.tsx"],
-      "styles": ["registry/styles/loading.css"]
-    },
     "empty": {
       "name": "empty",
       "description": "Empty state component",
@@ -90,6 +84,12 @@
       "description": "Multi-select filter dropdown",
       "files": ["registry/ui/inputs/MultiselectFilter.tsx"],
       "styles": ["registry/styles/SelectInput.css"]
+    },
+    "cards": {
+      "name": "cards",
+      "description": "Mobile-friendly card layout for data rows",
+      "files": ["registry/ui/Cards.tsx"],
+      "styles": ["registry/styles/Cards.css"]
     }
   },
   "baseStyles": [

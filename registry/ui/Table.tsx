@@ -105,9 +105,9 @@ export function TblxTable<T extends { id: string | number }>({
   // Auto-enable selection when BulkActions is present, or use explicit prop as override
   const showSelection = enableSelection ?? hasBulkActions;
   
-  // Show skeleton when loading and no data
-  const showSkeleton = isLoading && rows.length === 0;
-  const skeletonRowCount = state?.limit || 20;
+  // Show skeleton when loading
+  const showSkeleton = isLoading;
+  const skeletonRowCount = rows.length || 50;
 
   return (
     <table className={`tblx__table ${className}`}>

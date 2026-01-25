@@ -25,8 +25,6 @@
  *   </Tblx.Filters>
  *
  *   <div className="my-content">
- *     <Tblx.Loading />
- *     <Tblx.LoadingOverlay />
  *     <Tblx.Table columns={columns} />
  *     <Tblx.Empty>No users found</Tblx.Empty>
  *   </div>
@@ -51,10 +49,10 @@ import { TblxInfiniteScroll } from "./InfiniteScroll";
 import { TblxBulkActions } from "./BulkActions";
 import { TblxColumnConfig } from "./ColumnConfig";
 import { TblxTotalCount } from "./TotalCount";
-import { TblxLoading, TblxLoadingOverlay } from "./Loading";
 import { TblxEmpty } from "./Empty";
 import { TblxSelectFilter } from "./inputs/SelectFilter";
 import { TblxMultiselectFilter } from "./inputs/MultiselectFilter";
+import { TblxCards } from "./Cards";
 
 // =====================
 // Main Component (Provider with attached child components)
@@ -102,12 +100,6 @@ Tblx.ColumnConfig = TblxColumnConfig;
 /** Total count display */
 Tblx.TotalCount = TblxTotalCount;
 
-/** Loading state (shown when no data) */
-Tblx.Loading = TblxLoading;
-
-/** Loading overlay (shown when refreshing with existing data) */
-Tblx.LoadingOverlay = TblxLoadingOverlay;
-
 /** Empty state (shown when no data and not loading) */
 Tblx.Empty = TblxEmpty;
 
@@ -116,6 +108,9 @@ Tblx.SelectFilter = TblxSelectFilter;
 
 /** Multi-select filter dropdown */
 Tblx.MultiselectFilter = TblxMultiselectFilter;
+
+/** Mobile-friendly card layout */
+Tblx.Cards = TblxCards;
 
 export default Tblx;
 
@@ -134,13 +129,12 @@ export {
   TblxFilters,
   TblxFilterToggler,
   TblxTable,
+  TblxCards,
   TblxPager,
   TblxInfiniteScroll,
   TblxBulkActions,
   TblxColumnConfig,
   TblxTotalCount,
-  TblxLoading,
-  TblxLoadingOverlay,
   TblxEmpty,
   TblxSelectFilter,
   TblxMultiselectFilter,

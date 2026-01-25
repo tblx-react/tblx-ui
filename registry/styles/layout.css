@@ -82,6 +82,55 @@
 }
 
 /* ============================================
+   View Toggle (Table/Cards/Auto)
+   ============================================ */
+
+.tblx__view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: var(--tf-bg);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius-md);
+}
+
+.tblx__view-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--tf-radius-sm);
+  color: var(--tf-text-muted);
+  cursor: pointer;
+  transition: all var(--tf-transition);
+}
+
+.tblx__view-toggle-btn:hover {
+  color: var(--tf-text);
+  background: var(--tf-bg-hover);
+}
+
+.tblx__view-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tf-primary-ring);
+}
+
+.tblx__view-toggle-btn--active {
+  color: var(--tf-primary);
+  background: var(--tf-primary-light);
+}
+
+.tblx__view-toggle-btn--active:hover {
+  color: var(--tf-primary-hover);
+  background: var(--tf-primary-light);
+}
+
+/* ============================================
    Responsive Adjustments
    ============================================ */
 

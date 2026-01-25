@@ -8,7 +8,6 @@
 /* Layout */
 @import "./layout.css";
 @import "./filters.css";
-@import "./loading.css";
 
 /* Input Components */
 @import "./SearchInput.css";
@@ -18,6 +17,7 @@
 @import "./FiltersVisibilityToggler.css";
 @import "./BulkActions.css";
 @import "./Table.css";
+@import "./Cards.css";
 @import "./LoadOnScroll.css";
 @import "./Pager.css";
 @import "./ColumnConfig.css";
