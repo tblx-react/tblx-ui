@@ -1,6 +1,6 @@
 {
   "name": "tblx-ui",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Copy-paste UI components for tblx data tables",
   "type": "module",
   "homepage": "https://tblx.dev",
@@ -28,6 +28,7 @@
   "files": [
     "dist",
     "registry",
+    "registry.json",
     "README.md"
   ],
   "peerDependencies": {
